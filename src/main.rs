@@ -17,6 +17,7 @@ pub extern "C" fn _start() {
             "xor rdi, rdi",
             "syscall",
             msg = in(reg) b"Hello, world!\n".as_ptr(),
+            options(nostack, noreturn)
         );
     }
 }
